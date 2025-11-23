@@ -13,23 +13,14 @@ class Files:
 
     def defiler(self):
         if not self.est_vide():
-            val = self.file[0] 
+            val = self.file[0]
             del self.file[0]
             return val
         else:
             print("Attention la file est vide")
             return None
-    
+
     def enfiler(self, element):
         self.file = self.file + [element]
         return None
-    
-    def afficher(self):
-        print(f"TETE <-- {self.file}, <-- QUEUE")
-        return None
-    
-    def taille(self):
-        taille_file = 0
-        for val in self.file:
-            taille_file = taille_file + 1
-        return taille_file
+
