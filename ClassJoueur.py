@@ -43,8 +43,9 @@ class Joueur:
 
         self.name = "".join(liste_nom)
         display.scroll(self.name)
+        radio.send(str(self.name))  # envoyer le nom à la carte arbitre
         sleep(1000)
-        return self.name
+        return
 
     def Choix_symbole(self):
         dictio_symboles = {"pierre" : Image('09990:''90009:''90009:''90009:''09990:'),
@@ -83,6 +84,7 @@ class Joueur:
                         break
 
         display.show(str(self.choix))
+        radio.send(str(self.choix))  # envoyer le choix à la carte arbitre
         sleep(1000)
         return self.choix
 
@@ -96,7 +98,7 @@ class Joueur:
                         self.connecte = "oui"
                         display.show("C")  # Connected
                         sleep(500)
-                        radio.send(str(self.name))  # envoyer le nom à la carte arbitre
+                        self.Choix_du_nom()
                         break
         sleep(1000)
         return self.connecte
