@@ -1,4 +1,4 @@
-class Files:
+mclass Files:
     """ Classe File implémentée en python
     à partir de liste python
     """
